@@ -2,6 +2,8 @@
 #include <cstring>
 #include <fstream>
 #include "Node.h"
+//John Elstad Binary Search Tree
+//This code is a binary search tree.
 
 
 using namespace std;
@@ -37,7 +39,7 @@ void configureInput(ifstream &stream, bool &isFile){
     cout << "Enter by command line" << endl;
   }
 }
-void addNumbers(istream &from, Node* &head){
+void addNumbers(istream &from, Node* &head){//adds numbers to tree
  
   int newInput;
   from >> newInput;
@@ -53,7 +55,7 @@ void addNumbers(istream &from, Node* &head){
   }
 }
 
-int main(){
+int main(){//your main function. mainly used for gui
   
   Node* head = NULL;
   bool running = true;
@@ -118,13 +120,13 @@ int main(){
   }
 } 
 
-void strToLower(char* a){ 
+void strToLower(char* a){ //converts strings to lowercase
   while(*a){
     *a = tolower(*a);
     a++;
   }
 }
-void addNode(Node* head, int number, Node* &treeHead){
+void addNode(Node* head, int number, Node* &treeHead){//adds a node to tree
   if (treeHead == NULL){
     treeHead = new Node(number);
   }
@@ -145,7 +147,7 @@ void addNode(Node* head, int number, Node* &treeHead){
     }
   }
 }
-void printTree(Node* head, int level){
+void printTree(Node* head, int level){//prints the tree
   level ++;
   if(head->getRight()){
     printTree(head->getRight(), level);
@@ -158,7 +160,7 @@ void printTree(Node* head, int level){
     printTree(head->getLeft(), level);
   } 
 }
-Node* nodeSearch(Node* head, int number, Node* &parent, bool &right){
+Node* nodeSearch(Node* head, int number, Node* &parent, bool &right){//searches for a node
   if (number < head->getData()){
     if(head->getLeft()){
       right = false;
@@ -177,7 +179,7 @@ Node* nodeSearch(Node* head, int number, Node* &parent, bool &right){
   }
   else return head;
 }
-bool deleteNode(Node* &head, int number){
+bool deleteNode(Node* &head, int number){//deletes the Node
   Node* parent;
   Node* dNode;
   bool right;
