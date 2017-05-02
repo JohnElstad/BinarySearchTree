@@ -4,7 +4,7 @@
 #include "Node.h"
 //John Elstad Binary Search Tree
 //This code is a binary search tree.
-
+//5.1.17
 
 using namespace std;
 
@@ -24,7 +24,7 @@ void configureInput(ifstream &stream, bool &isFile){
   strToLower(input);
   
   if(input[0] == 'f'){
-    cout << "What file?" << endl;
+    cout << "What file are you looking for?" << endl;
     cin.getline(input,128);
     stream.open(input);
     if(stream.is_open()){
@@ -60,7 +60,8 @@ int main(){//your main function. mainly used for gui
   Node* head = NULL;
   bool running = true;
   char input[30];
-  cout<<"Valid commands are print,add,search and delete"
+  cout<<"WELCOME TO BINARY SEARCH TREE"<<endl;
+  cout<<"Valid commands are print,add,search and delete"<<endl;
   while (running == true){
     cin.getline(input,30);
     strToLower(input);
